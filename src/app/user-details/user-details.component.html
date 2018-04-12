@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <h1 class="text-center">Profile Details</h1>
+    <!-- code start -->
+    <div class="twPc-div">
+      <a class="twPc-bg twPc-block"></a>
+
+      <div *ngFor="let d of userList">
+        <div class="twPc-button">
+          <a href="https://twitter.com/mertskaplan" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false" data-dnt="true">Follow @mertskaplan</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        </div>
+
+        <a title="Mert Salih Kaplan" href="https://twitter.com/mertskaplan" class="twPc-avatarLink">
+          <img *ngIf="!d.profile && d.gender == 'male'" alt="Profile img" src="../../assets/images/default.gif" class="twPc-avatarImg">
+          <img *ngIf="!d.profile && d.gender == 'female'" alt="Profile img" src="../../assets/images/lady.png" class="twPc-avatarImg">
+          <img *ngIf="d.profile && d.gender" alt="Profile img" src="{{d.profile}}" class="twPc-avatarImg">
+        </a>
+
+        <div class="twPc-divUser">
+          <div class="twPc-divName">
+            <a *ngIf="d.firstname && d.lastname" href="https://twitter.com/mertskaplan">{{d.firstname | custom}} {{d.lastname | custom}}</a>
+            <a *ngIf="!d.firstname && d.lastname" href="https://twitter.com/mertskaplan">No Name</a>
+          </div>
+        </div>
+
+        <div class="twPc-divStats">
+          <ul class="twPc-Arrange">
+            <li class="twPc-ArrangeSizeFit" style="width: 40%;">
+              <a href="https://twitter.com/mertskaplan" title="9.840 Tweet">
+                <span class="twPc-StatLabel twPc-block">Id</span>
+                <span class="twPc-StatValue">{{d._id}}</span>
+              </a>
+            </li>
+            <li class="twPc-ArrangeSizeFit">
+            <a href="https://twitter.com/mertskaplan/following" title="885 Following">
+              <span class="twPc-StatLabel twPc-block">Age</span>
+              <span class="twPc-StatValue">{{d.age}}</span>
+            </a>
+           </li>
+            <li class="twPc-ArrangeSizeFit">
+              <a href="https://twitter.com/mertskaplan/following" title="885 Following">
+                <span class="twPc-StatLabel twPc-block">Gender</span>
+                <span class="twPc-StatValue">{{d.gender | custom}}</span>
+              </a>
+            </li>
+            <li class="twPc-ArrangeSizeFit">
+              <a href="https://twitter.com/mertskaplan/followers" title="1.810 Followers">
+                <span class="twPc-StatLabel twPc-block">Salary</span>
+                <span class="twPc-StatValue">{{d.salary}}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
